@@ -1,0 +1,22 @@
+
+version: '2.3'
+services:
+  aiows-server:
+    build: .
+    volumes:
+      - .:/src
+    working_dir: /src
+    command: python server.py
+    ports:
+      - "8080:8080"
+
+  aiows-client:
+    build: .
+    volumes:
+      - .:/src
+    working_dir: /src
+    command: python client.py
+    depends_on:
+      - aiows-server
+    environment:
+      - HOST=aiows-server

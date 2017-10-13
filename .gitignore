@@ -1,0 +1,9 @@
+
+# Python virtual environment
+env/
+
+# pyenv shim helper
+.python-version
+
+# PyCharm
+.idea/
